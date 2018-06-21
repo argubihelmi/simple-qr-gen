@@ -1,16 +1,26 @@
-<script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
-<script>
-var qrcode = new QRCode("qrcode");
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+  </head>
+  
+  <body>
+    <input id="text" type="text" placeholder="input URL here" />
+    
+    <button type="button" onclick="makeCode()">generate QR code</button>
+    
+    <div id="qrcode" style="margin-top: 50px;"></div>
+    
+    <script>
+    var qrcode = new QRCode("qrcode");
 
-function makeCode() {		
-	var elText = document.getElementById("text");
-	
-	if (elText.value) {
-		qrcode.makeCode(elText.value);
-  }
-}
-</script>
+    function makeCode() {		
+      var elText = document.getElementById("text");
 
-<input id="text" type="text" placeholder="input URL here" />
-<button type="button" onclick="makeCode()">generate QR code</button>
-<div id="qrcode" style="margin-top: 50px;"></div>
+      if (elText.value) {
+        qrcode.makeCode(elText.value);
+      }
+    }
+    </script>
+  </body>
+</html>
