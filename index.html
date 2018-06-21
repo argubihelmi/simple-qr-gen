@@ -1,4 +1,17 @@
+<script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
 <input id="text" type="text" placeholder="input URL here" />
 <button type="button" onclick="makeCode()">generate QR code</button>
 
 <div id="qrcode" style="margin-top: 50px;"></div>
+
+<script>
+var qrcode = new QRCode("qrcode");
+
+function makeCode() {		
+	var elText = document.getElementById("text");
+	
+	if (elText.value) {
+		qrcode.makeCode(elText.value);
+  }
+}
+</script>
